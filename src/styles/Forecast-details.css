@@ -1,0 +1,13 @@
+.Forecast-details{
+     margin-left: auto;
+    margin-right:auto;
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.5rem;
+    font-weight: bold;
+};
+.text-bold {
+    font-weight: bold;
+}
