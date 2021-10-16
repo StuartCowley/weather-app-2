@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Simple weather app using react as frontend framework with simple Weather API connection using axios. 
+For Design Bulma css was utilised. 
+Deployed on netlify 
+
 ## Available Scripts
 
 In the project directory, you can run:
