@@ -16,12 +16,15 @@ function App() {
   const [searchText, setSearchText] = useState("");
 
 const selectForecast = forecasts.find(
-    (forecast) => forecast.date === selectedDate
+    (forecast) => forecast.icon === selectedDate
   );
-  const handleForecastSelect = (date) => {
-    setSelectedDate(date);
+      console.log(selectedDate)
+      console.log(selectForecast)
+;
+  const handleForecastSelect = (icon) => {
+    setSelectedDate(icon);
   };
- 
+ console.log(handleForecastSelect);
   const handleCitySearch = ()=> {
     getForecast(searchText ,setSelectedDate, setForecasts,setLocation )
    setSearchText('')

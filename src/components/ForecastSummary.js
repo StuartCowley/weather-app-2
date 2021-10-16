@@ -11,7 +11,7 @@ function ForecastSummary(props) {
   const scroll = () => {
     const section = document.querySelector("#more-details");
     section.scrollIntoView({ behavior: "smooth", block: "center" });
-    return onSelect(date);
+    return onSelect(icon);
   };
 
   return (
