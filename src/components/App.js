@@ -5,6 +5,7 @@ import ForecastSummaries from "./ForecastSummaries";
 import Search from "./Search";
 import "../styles/App.css";
 import ForecastDetails from "./ForecastDetails";
+import "bootstrap/dist/css/bootstrap.min.css";
 /* eslint-disable */
 
 function App() {
@@ -29,7 +30,7 @@ const selectForecast = forecasts.find(
 
   
   return (
-    <div className="weather-app">
+    <div className="weather-app flex-container">
       <LocationDetails city={location.city} country={location.country} />
       <Search onSubmit={handleCitySearch} searchText={searchText}  setSearchText={setSearchText}/>
       <ForecastSummaries

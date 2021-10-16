@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "bulma/css/bulma.css";
+import "../styles/App.css";
 
 export default function Search({ searchText, setSearchText, onSubmit }) {
   const handleInputChange = (event) => setSearchText(event.target.value);
@@ -10,15 +12,20 @@ export default function Search({ searchText, setSearchText, onSubmit }) {
     }
   };
   return (
-    <div className="Search">
+    <div className="Search d-flex">
       <input
+        className="input is-rounded is-large"
         type="text"
         placeholder="Search by city...."
         onChange={handleInputChange}
         value={searchText}
         onKeyPress={handleEnter}
       />
-      <button className="button" type="submit" onClick={onSubmit}>
+      <button
+        className="button is-primary is-large is-rounded"
+        type="submit"
+        onClick={onSubmit}
+      >
         Search
       </button>
     </div>

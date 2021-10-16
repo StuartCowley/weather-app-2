@@ -7,7 +7,7 @@ export default function LocationDetails(props) {
   const { city, country } = props;
 
   return (
-    <div className="location">
+    <div className="location title is-2">
       <h1 className="location">{`${city}, ${country}`}</h1>
     </div>
   );
