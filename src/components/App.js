@@ -20,12 +20,8 @@ const selectForecast = forecasts.find(
   );
   const handleForecastSelect = (date) => {
     setSelectedDate(date);
-    return onscroll
   };
-  const scroll = () => {
-    const section = document.querySelector( '#more-details' );
-    section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
-  };
+ 
   const handleCitySearch = ()=> {
     getForecast(searchText ,setSelectedDate, setForecasts,setLocation )
    setSearchText('')
@@ -37,7 +33,7 @@ const selectForecast = forecasts.find(
   
   return (
     <div className="weather-app container">
-      <LocationDetails city={location.city} country={location.country} />
+      {location && <LocationDetails city={location.city} country={location.country} /> }
       <Search onSubmit={handleCitySearch} searchText={searchText}  setSearchText={setSearchText}/>
       <ForecastSummaries
         forecasts={forecasts}
