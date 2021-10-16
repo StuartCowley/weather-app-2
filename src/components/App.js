@@ -20,6 +20,11 @@ const selectForecast = forecasts.find(
   );
   const handleForecastSelect = (date) => {
     setSelectedDate(date);
+    return onscroll
+  };
+  const scroll = () => {
+    const section = document.querySelector( '#more-details' );
+    section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
   };
   const handleCitySearch = ()=> {
     getForecast(searchText ,setSelectedDate, setForecasts,setLocation )

@@ -8,6 +8,12 @@ import "bulma/css/bulma.css";
 
 function ForecastSummary(props) {
   const { date, temperature, description, icon, onSelect } = props;
+  const scroll = () => {
+    const section = document.querySelector("#more-details");
+    section.scrollIntoView({ behavior: "smooth", block: "center" });
+    return onSelect(date);
+  };
+
   return (
     <div className="forecast-summary card">
       <div className="forecast-summary_date  Primary">
@@ -18,10 +24,11 @@ function ForecastSummary(props) {
       </div>
       <div className="forecast_summary_temperature ">{temperature}&deg;C</div>
       <div className="forecast-summary_description ">{description}</div>
+
       <button
         className="button info-button is-primary "
         type="button"
-        onClick={() => onSelect(date)}
+        onClick={scroll}
       >
         More Details
       </button>

@@ -9,11 +9,11 @@ function ForecastDetails({ forecasts }) {
 
   return (
     // eslint-disable-next-line react/jsx-no-comment-textnodes
-    <div className="Forecast-details card">
+    <div className="Forecast-details card" id="more-details">
       <span> {moment(date).format("ddd Do MMM")} </span>
       <span> Max temperature: {temperature.max}&deg;C </span>
-      <span> Min temperature :{temperature.min}&deg;C </span>
-      <span> Humidity:{humidity} % </span>
+      <span> Min temperature: {temperature.min}&deg;C </span>
+      <span> Humidity: {humidity}% </span>
       <span> Wind Speed:{wind.speed} </span>
     </div>
   );
