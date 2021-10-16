@@ -30,7 +30,7 @@ const selectForecast = forecasts.find(
 
   
   return (
-    <div className="weather-app flex-container">
+    <div className="weather-app container">
       <LocationDetails city={location.city} country={location.country} />
       <Search onSubmit={handleCitySearch} searchText={searchText}  setSearchText={setSearchText}/>
       <ForecastSummaries

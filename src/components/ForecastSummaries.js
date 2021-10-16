@@ -6,7 +6,7 @@ import "../styles/ForecastSummaries.css";
 import "../styles/Card.css";
 
 const ForecastSummaries = ({ forecasts, onForecastSelect }) => (
-  <div className="forecast-summaries">
+  <div className="forecast-summaries flex-container">
     {forecasts.map((forecast) => (
       <ForecastSummary
         key={forecast.date}

@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "bulma/css/bulma.css";
 import "../styles/App.css";
+import "../styles/Card.css";
 
 export default function Search({ searchText, setSearchText, onSubmit }) {
   const handleInputChange = (event) => setSearchText(event.target.value);
@@ -22,7 +23,7 @@ export default function Search({ searchText, setSearchText, onSubmit }) {
         onKeyPress={handleEnter}
       />
       <button
-        className="button is-primary is-large is-rounded"
+        className="button-search button is-primary is-large is-rounded"
         type="submit"
         onClick={onSubmit}
       >
