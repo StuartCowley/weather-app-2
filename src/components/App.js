@@ -28,6 +28,7 @@ const selectForecast = forecasts.find(
   };
   const handleCitySearch = ()=> {
     getForecast(searchText ,setSelectedDate, setForecasts,setLocation )
+   setSearchText('')
   }
  useEffect(() => {
   getForecast(searchText,setSelectedDate, setForecasts, setLocation);
