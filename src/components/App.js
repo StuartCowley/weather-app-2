@@ -9,6 +9,7 @@ import ForecastDetails from "./ForecastDetails";
 import Forecast from "./Forecast";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ForecastDetailsTwo from "./ForecastDetailsTwo";
+import MoreDetails from "./MoreDetails";
 /* eslint-disable */
 
 function App() {
@@ -42,6 +43,7 @@ const selectForecast = forecasts.find(
         forecasts={forecasts}
         onForecastSelect={handleForecastSelect}
         /> */}
+       < MoreDetails/ >
       {selectForecast && <ForecastDetails forecasts={selectForecast} />}
       <ForecastDetailsTwo />
     </div>

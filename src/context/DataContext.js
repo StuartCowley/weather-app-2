@@ -13,17 +13,6 @@ export const DataContextProvider = (props) => {
   useEffect(() => {
     getForecast(searchText, setSelectedDate, setForecasts, setLocation);
   }, []);
-
-  const selectForecast = forecasts.find(
-    (forecast) => forecast.date === selectedDate
-  );
-  const handleForecastSelect = (date) => {
-    setSelectedDate(date);
-    // eslint-disable-next-line no-console
-    console.log(`button clicked`);
-    console.log(selectedDate);
-  };
-
   const handleCitySearch = () => {
     getForecast(searchText, setSelectedDate, setForecasts, setLocation);
     setSearchText("");
@@ -40,10 +29,9 @@ export const DataContextProvider = (props) => {
     selectedDate,
     searchText,
     setSearchText,
-    selectForecast,
-    handleForecastSelect,
     handleCitySearch,
     scroll,
+    setSelectedDate,
   };
 
   return (

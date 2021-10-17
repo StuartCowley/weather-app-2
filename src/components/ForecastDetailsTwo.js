@@ -1,18 +1,17 @@
 /* eslint-disable react/button-has-type */
 import React, { useContext } from "react";
+// import moment from "moment";
 import { DataContext } from "../context/DataContext";
 
 export default function ForecastDetailsTwo() {
-  const { selectForecast, selectedDate } = useContext(DataContext);
-  console.log(selectForecast);
-  console.log(selectedDate);
+  const { selectedDate } = useContext(DataContext);
   return (
     <div>
-      {selectForecast && (
+      {selectedDate && (
         <>
-          <h2>date is{selectForecast.date} </h2>
-          <h2>Icon is{selectForecast.icon} </h2>
-          <h2>Widn is{selectForecast.wind.speed} </h2>
+          {/* <h2> {moment(selectedDate.date).format("ddd Do MMM")} </h2>
+          <h2>Icon is{selectedDate.icon} </h2>
+          <h2>Widn is{selectedDate.wind} </h2> */}
         </>
       )}
     </div>
