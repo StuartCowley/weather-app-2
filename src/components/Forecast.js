@@ -26,21 +26,13 @@ function Forecast() {
                 const displayDay = forecasts.find(
                   (day) => day.date === forecast.date
                 );
-                console.log(displayDay);
                 setSelectedDate(displayDay);
-                console.log(selectedDate);
-                // setSelectedDate(forecast.date);
-                // console.log(`${moment(selectedDate).format("ddd Do MMM")}`);
               }}
             >
               {" "}
               More Details
             </button>
           )}
-          {/* {selectedDate && 
-            <button Onclick={() => {  console.log(selectedDate);
-                setSelectedDate(forecast.date);>
-           </button>} */}
         </>
       ))}
     </>

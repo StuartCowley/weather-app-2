@@ -11,16 +11,16 @@ function ForecastDetails() {
   // const { forecasts } = useContext(DataContext);
   const { selectedDate } = useContext(DataContext);
   // eslint-disable-next-line no-console
-  const { date, temperature, description, icon, humidity, wind } = selectedDate;
+  const { date, description, icon, humidity } = selectedDate;
   console.log(selectedDate);
   return (
     // eslint-disable-next-line react/jsx-no-comment-textnodes
     <div className="Forecast-details card" id="more-details">
       <span> {moment(date).format("ddd Do MMM")} </span>
-      <span> Max temperature: {temperature.max}&deg;C </span>
-      <span> Min temperature: {temperature.min}&deg;C </span>
+      {/* <span> Max temperature: {temperature.max}&deg;C </span>
+      <span> Min temperature: {temperature.min}&deg;C </span> */}
       <span> Humidity: {humidity}% </span>
-      <span> Wind Speed:{wind.speed} </span>
+      {/* <span> Wind Speed:{wind.speed} </span> */}
       <spa> Icon : {icon} </spa>
       <spa> Icon : {description} </spa>
     </div>
