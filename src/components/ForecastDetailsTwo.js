@@ -3,8 +3,9 @@ import React, { useContext } from "react";
 import { DataContext } from "../context/DataContext";
 
 export default function ForecastDetailsTwo() {
-  const { selectForecast } = useContext(DataContext);
+  const { selectForecast, selectedDate } = useContext(DataContext);
   console.log(selectForecast);
+  console.log(selectedDate);
   return (
     <div>
       {selectForecast && (

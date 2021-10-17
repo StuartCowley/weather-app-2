@@ -19,6 +19,9 @@ export const DataContextProvider = (props) => {
   );
   const handleForecastSelect = (date) => {
     setSelectedDate(date);
+    // eslint-disable-next-line no-console
+    console.log(`button clicked`);
+    console.log(selectedDate);
   };
 
   const handleCitySearch = () => {
@@ -28,6 +31,7 @@ export const DataContextProvider = (props) => {
   const scroll = () => {
     const section = document.querySelector("#more-details");
     section.scrollIntoView({ behavior: "smooth", block: "center" });
+    // eslint-disable-next-line no-undef
     return handleForecastSelect();
   };
   const value = {

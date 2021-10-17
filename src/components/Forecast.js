@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/button-has-type */
 import React, { useContext } from "react";
 import { DataContext } from "../context/DataContext";
@@ -5,7 +6,8 @@ import { DataContext } from "../context/DataContext";
 function Forecast() {
   const { forecasts, handleForecastSelect } = useContext(DataContext);
   // eslint-disable-next-line no-console
-  console.log({ forecasts, handleForecastSelect });
+  const date = forecasts[0];
+  console.log(date);
   return (
     <>
       {forecasts.map((forecast) => (
@@ -16,8 +18,8 @@ function Forecast() {
           <h2> icon is: {forecast.icon} </h2>
           <h2> temperature is: {forecast.temperature.min} </h2>
           <h2> humidity is: {forecast.humidity} </h2>
-          <button type="text" onClick={handleForecastSelect(forecast.date)}>
-            MoreDetails
+          <button type="submit" onClick={handleForecastSelect(date)}>
+            More Details
           </button>
         </>
       ))}

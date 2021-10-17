@@ -37,7 +37,7 @@ const selectForecast = forecasts.find(
     <div className="weather-app container">
       {location && <LocationDetails city={location.city} country={location.country} /> }
       <Search />
-      < Forecast />
+      {selectForecast && < Forecast /> }
       {/* <ForecastSummaries
         forecasts={forecasts}
         onForecastSelect={handleForecastSelect}
