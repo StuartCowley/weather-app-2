@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
+// eslint-disable-next-line import/named
+import { DataContextProvider } from "../context/DataContext";
 import getForecast from "../requests/getForecast";
 import LocationDetails from "./LocationDetails";
-import ForecastSummaries from "./ForecastSummaries";
 import Search from "./Search";
 import "../styles/App.css";
 import ForecastDetails from "./ForecastDetails";
+import Forecast from "./Forecast";
 import "bootstrap/dist/css/bootstrap.min.css";
+import ForecastDetailsTwo from "./ForecastDetailsTwo";
 /* eslint-disable */
 
 function App() {
@@ -22,26 +25,27 @@ const selectForecast = forecasts.find(
     setSelectedDate(date);
   };
  
-  const handleCitySearch = ()=> {
-    getForecast(searchText ,setSelectedDate, setForecasts,setLocation )
-   setSearchText('')
-  }
+
  useEffect(() => {
   getForecast(searchText,setSelectedDate, setForecasts, setLocation);
 }, [])
 
   
   return (
+    < DataContextProvider > 
+    
     <div className="weather-app container">
       {location && <LocationDetails city={location.city} country={location.country} /> }
-      <Search onSubmit={handleCitySearch} searchText={searchText}  setSearchText={setSearchText}/>
-      <ForecastSummaries
+      <Search />
+      < Forecast />
+      {/* <ForecastSummaries
         forecasts={forecasts}
         onForecastSelect={handleForecastSelect}
-      />
+        /> */}
       {selectForecast && <ForecastDetails forecasts={selectForecast} />}
-      
+      <ForecastDetailsTwo />
     </div>
+        </DataContextProvider>
   );
 }
 

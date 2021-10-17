@@ -1,15 +1,20 @@
-import React from "react";
+/* eslint-disable react/no-unused-prop-types */
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import "bulma/css/bulma.css";
 import "../styles/App.css";
 import "../styles/Card.css";
+import { DataContext } from "../context/DataContext";
 
-export default function Search({ searchText, setSearchText, onSubmit }) {
+export default function Search() {
+  const { searchText, setSearchText, handleCitySearch } =
+    useContext(DataContext);
+
   const handleInputChange = (event) => setSearchText(event.target.value);
   // eslint-disable-next-line consistent-return
   const handleEnter = (event) => {
     if (event.key === "Enter") {
-      return onSubmit();
+      return handleCitySearch();
     }
   };
   return (
@@ -25,7 +30,7 @@ export default function Search({ searchText, setSearchText, onSubmit }) {
       <button
         className="button-search button is-primary is-large is-rounded"
         type="submit"
-        onClick={onSubmit}
+        onClick={handleCitySearch}
       >
         Search
       </button>
